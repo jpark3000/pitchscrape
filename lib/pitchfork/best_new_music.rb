@@ -28,7 +28,7 @@ module Pitchfork
     end
 
     def parse_artwork(album)
-      album.at_css('div.artwork img').attr('src')
+      Nokogiri::HTML(album.at_css('div.lazy').attr('data-content')).at_css('img').attr('src')
     end
 
     def parse_title(album)
