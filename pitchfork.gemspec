@@ -4,12 +4,12 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'pitchfork/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "pitchfork"
+  spec.name          = "pitchfork_bnm"
   spec.version       = Pitchfork::VERSION
   spec.authors       = ["Justin Park"]
   spec.email         = ["jpark3000@gmail.com"]
   spec.summary       = "Unofficial Pitchfork Media API"
-  spec.description   = "For querying Pitchfork albums"
+  spec.description   = "For querying Pitchfork Best New Music albums"
   spec.homepage      = ""
   spec.license       = "MIT"
 
