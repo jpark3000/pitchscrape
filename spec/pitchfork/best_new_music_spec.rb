@@ -2,7 +2,11 @@ require 'spec_helper'
 
 describe Pitchfork::BestNewMusic do
   let(:fixture) { File.open(File.expand_path('../../bnm-fixture.html', __FILE__)) }
-  let(:bnm) { Pitchfork::BestNewMusic.new(fixture) }
+  let(:bnm) { Pitchfork::BestNewMusic }
+
+  before do
+    allow(bnm).to receive(:doc).and_return(Nokogiri::HTML(fixture, nil, 'UTF-8').css('ul.bnm-list > li'))
+  end
 
   it 'parses album artwork' do
     expect(bnm.albums.first.artwork).to eq "http://cdn2.pitchfork.com/albums/21283/list.a0908a64.jpg"
