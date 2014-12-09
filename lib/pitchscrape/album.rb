@@ -1,4 +1,4 @@
-module Pitchfork
+module Pitchscrape
   class Album
     attr_reader :artist, :title, :rating, :label,
                 :review, :review_date, :artwork

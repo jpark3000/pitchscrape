@@ -1,7 +1,7 @@
 require 'open-uri'
 require 'nokogiri'
 
-module Pitchfork
+module Pitchscrape
   class BestNewMusic
     BNM_URL = 'http://www.pitchfork.com/reviews/best/albums'
     class << self
@@ -17,7 +17,7 @@ module Pitchfork
 
       def parse_doc(page)
         doc(page).map do |album|
-          Pitchfork::Album.new(
+          PitchforkBNM::Album.new(
             artwork: parse_artwork(album),
             title: parse_title(album),
             artist: parse_artist(album),
