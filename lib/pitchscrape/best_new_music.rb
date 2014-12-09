@@ -17,7 +17,7 @@ module Pitchscrape
 
       def parse_doc(page)
         doc(page).map do |album|
-          PitchforkBNM::Album.new(
+          Pitchscrape::Album.new(
             artwork: parse_artwork(album),
             title: parse_title(album),
             artist: parse_artist(album),

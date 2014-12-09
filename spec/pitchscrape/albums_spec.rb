@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Pitchscrape::Albums do
+describe Pitchscrape::BestNewMusic do
   let(:fixture) { File.open(File.expand_path('../../bnm-fixture.html', __FILE__)) }
-  let(:bnm) { PitchforkBNM::Albums }
+  let(:bnm) { Pitchscrape::BestNewMusic }
 
   before do
     allow(bnm).to receive(:doc).and_return(Nokogiri::HTML(fixture, nil, 'UTF-8').css('ul.bnm-list > li'))
@@ -53,6 +53,6 @@ describe Pitchscrape::Albums do
   end
 
   it 'returns an array of album objects' do
-    expect(bnm.albums.map(&:class)).to eq Array.new(5, PitchforkBNM::Album)
+    expect(bnm.albums.map(&:class)).to eq Array.new(5, Pitchscrape::Album)
   end
 end

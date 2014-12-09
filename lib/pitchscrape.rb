@@ -1,3 +1,3 @@
 require 'pitchscrape/version'
 require 'pitchscrape/album'
-require 'pitchscrape/albums'
+require 'pitchscrape/best_new_music'
